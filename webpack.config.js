@@ -51,6 +51,7 @@ module.exports = () => {
             filename: 'js/[name].js',
         },
         plugins: [
+            new CleanWebpackPlugin(),
             new CopyPlugin([
                 { from: './src/assets', to: '.' },
             ]),
@@ -60,7 +61,6 @@ module.exports = () => {
             new MiniCssExtractPlugin({
                 filename: 'css/[name]',
             }),
-            new CleanWebpackPlugin(),
         ],
     };
 };
