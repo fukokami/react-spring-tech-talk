@@ -2,8 +2,7 @@
 
 const CopyPlugin = require('copy-webpack-plugin')
     , MiniCssExtractPlugin = require('mini-css-extract-plugin')
-    , FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries')
-    , { CleanWebpackPlugin } = require('clean-webpack-plugin');
+    , FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 
 module.exports = () => {
 
@@ -51,7 +50,6 @@ module.exports = () => {
             filename: 'js/[name].js',
         },
         plugins: [
-            new CleanWebpackPlugin(),
             new CopyPlugin([
                 { from: './src/assets', to: '.' },
             ]),
