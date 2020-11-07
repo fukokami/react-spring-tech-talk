@@ -29,10 +29,8 @@ export default class RenderTransition extends Component {
     render() {
         return (
             <div>
-                <div style={{ margin: 30 }}>
-                    <button onClick={() => this.addItem()}>Add</button>
-                    <button onClick={() => this.deleteItem()}>Delete</button>
-                </div>
+                <a className="green" onClick={() => this.addItem()}>Add</a>
+                <a className="green" onClick={() => this.deleteItem()}>Delete</a>
                 <div className="container">
                     <Transition
                         items={this.state.items}
