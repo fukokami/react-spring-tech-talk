@@ -80,13 +80,15 @@ a {
 }
 
 .todo {
-  margin: 20px;
-  height: 3em;
-  border-radius: 19px;
-  line-height: 3em;
-  padding: 1em;
-  flex: 1;
-  background-color: beige;
+  overflow: hidden;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-family: "'Kanit'; sans-serif";
+  text-transform: uppercase;
 }
 
 button {
