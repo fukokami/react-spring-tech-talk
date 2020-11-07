@@ -7,9 +7,9 @@ import delay from 'delay';
 const Slots = Keyframes.Spring({
 
     // Single props
-    show: { color: 'red' },
+    single: { color: 'red' },
     // Chained animations (arrays)
-    showAndHide: [{ color: 'red' }, { color: 'blue' }],
+    arrayChained: [{ color: 'red' }, { color: 'blue' }, {color: 'green'}],
     // Functions with side-effects with access to component props
     wiggle: async (next) => {
         await next({ left: 100, from: { left: 0 }, config: config.wobbly });
@@ -61,7 +61,7 @@ export default class RenderKeyframes extends Component {
 
         this.state = {
             type: 1,
-            s: 'show'
+            s: 'single'
         };
     }
 
@@ -74,17 +74,17 @@ export default class RenderKeyframes extends Component {
         const { s } = this.state;
 
         switch (s) {
-            case 'show':
-                this.setState({ s: 'showAndHide' });
+            case 'single':
+                this.setState({ s: 'arrayChained' });
                 break;
-            case 'showAndHide':
+            case 'arrayChained':
                 this.setState({ s: 'wiggle' });
                 break;
             case 'wiggle':
-                this.setState({ s: 'show' });
+                this.setState({ s: 'single' });
                 break;
             default:
-                this.setState({ s: 'show' });
+                this.setState({ s: 'single' });
         }
     }
 
@@ -106,7 +106,7 @@ export default class RenderKeyframes extends Component {
                                 >
                                     {
                                         props => (
-                                            <animated.div style={{ position: 'relative', ...props }} >
+                                            <animated.div style={{ position: 'relative', fontSize: 40, ...props }} >
                                                 Hello
      
                                             </animated.div>
