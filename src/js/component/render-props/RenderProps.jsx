@@ -6,6 +6,7 @@ import RenderSpring from './widget/RenderSpring.jsx';
 import RenderTrait from './widget/RenderTrait.jsx';
 import RenderTransition from './widget/RenderTransition.jsx';
 import RenderKeyframes from './widget/RenderKeyframes.jsx';
+import RenderParallax from './widget/RenderParallax.jsx';
 
 export default class RenderProps extends Component {
     render() {
@@ -18,6 +19,8 @@ export default class RenderProps extends Component {
                 <Link className="blue" to="/render-prop/Transition">Transition</Link>
                 &nbsp;
                 <Link className="blue" to="/render-prop/Keyframes">Keyframes</Link>
+                &nbsp;
+                <Link className="blue" to="/render-prop/Parallax">Parallax</Link>
 
                 <br />
                 <Switch>
@@ -25,6 +28,7 @@ export default class RenderProps extends Component {
                     <Route path="/render-prop/Trait" component={RenderTrait} />
                     <Route path="/render-prop/Transition" component={RenderTransition} />
                     <Route path="/render-prop/Keyframes" component={RenderKeyframes} />
+                    <Route path="/render-prop/Parallax" component={RenderParallax} />
                 </Switch>
             </div>
         );
