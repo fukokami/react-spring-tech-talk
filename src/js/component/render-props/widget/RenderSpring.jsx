@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Spring, config } from 'react-spring/renderprops';
 
@@ -32,7 +33,7 @@ export default class RenderSpring extends Component {
     handleOnClick(val) {
         switch (val) {
             case 1:
-                this.setState({  config: config.default });
+                this.setState({ config: config.default });
                 break;
             case 2:
                 this.setState({ config: config.gentle });
@@ -49,6 +50,8 @@ export default class RenderSpring extends Component {
     render() {
         return (
             <div>
+                <Link style={{ color: 'blue' }} target="_blank" to="https://springs.pomb.us/">https://springs.pomb.us/</Link>
+                <br />
                 <a className="green" onClick={() => this.handleOnClick(1)}>config.default</a>
                 <a className="green" onClick={() => this.handleOnClick(2)}>config.gentle</a>
                 <a className="green" onClick={() => this.handleOnClick(3)}>config.custom</a>
